@@ -17,6 +17,10 @@ class LinkedList:
     # устанаваливается при если не удалось найти элемент с заданным значением
     FIND_ERR = 1
 
+    # устанаваливается при успешном выполнении put_left 
+    PUT_LEFT_OK = 0
+    # устанаваливается при если не удалось выполнить put_left 
+    PUT_LEFT_ERR = 1
 
     # конструктор
     # постусловие: возвращает созданный пустой односвязный список    
@@ -43,6 +47,7 @@ class LinkedList:
     def put_right(self, value):
         pass
 
+    # предусловие: список непуст
     # постусловие: в список добавлен элемент со значением value, предыдущий по отношению к положению курсора 
     def put_left(self, value):
         pass
@@ -65,11 +70,12 @@ class LinkedList:
     def replace(self, value):
         pass
 
+    # предусловие: в списке имеется хотя бы один элемент со значением value, находящийся справа от курсора
     # постусловие: курсор установлен на первый узел, находящийся справа от текущего узла и имеющий значение value
     def find(self, value):
         pass
-
-    # постусловие: из списка удалены все узлы со значением value
+    
+    # постусловие: в списке отсутствуют элементы значением value
     def remove_all(self, value):
         pass
 
@@ -92,7 +98,7 @@ class LinkedList:
     def size(self):
         pass
 
-
+    
     def get_remove_status(self):
         return self.remove_status
 
@@ -101,3 +107,6 @@ class LinkedList:
 
     def get_find_status(self):
         return self.find_status
+
+    def get_put_left_status(self):
+        return self.put_left_status
