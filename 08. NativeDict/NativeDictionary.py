@@ -103,10 +103,8 @@ class NativeDictionary:
     
     # постусловие: возвращает True, если заданный ключ присутствует в словаре    
     def is_key(self, key):
-        slot = self.find(key)
-        if slot is None:
-            return False
-        return True
+        self.find(key)
+        return self.get_find_status() == self.FIND_OK
     
     def get_get_status(self):
         return self.get_status
